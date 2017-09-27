@@ -2,524 +2,149 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Horizontal navigation dots - fullPage.js</title>
+    <meta name="author" content="Alvaro Trigo Lopez" />
+    <meta name="description" content="fullPage full-screen navigation and sections control menu." />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--    <link href="css/styles.css" rel="stylesheet">-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:400,700" rel="stylesheet">
-    <title>project</title>
-
+    <meta name="keywords" content="fullpage,jquery,demo,screen,fullscreen,navigation,control arrows, dots" />
+    <meta name="Resource-type" content="Document" />
 
 
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
-    <!--     <link rel="stylesheet" type="text/css" href="css/examples.css" />-->
 
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
-    <!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <!--    <script type="text/javascript" src="js/attrchange.js"></script>-->
 
     
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
-    <!--  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.css" />-->
-    <!--  <link rel="stylesheet" type="text/css" href="app/scripts/examples.css" />-->
-
-    <!--
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.js"></script>
-  <script type="text/javascript" src="app/scripts/examples.js"></script>
--->
-
-    <!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
     <script type="text/javascript" src="js/jquery.fullPage.js"></script>
-    <script type="text/javascript" src="js/examples.js"></script>
+
     <script type="text/javascript">
+        function checkWidth() {
+            var windowWidth = $(window).width();
+            var left = "left";
+            var bottom = "bottom";
+            var returnWidth = windowWidth < 400 ? bottom : left;
+//            return returnWidth;
+            console.log(returnWidth);
+            return returnWidth;
+        }
+        
+        
+        
+        
         $(document).ready(function() {
             $('#fullpage').fullpage({
-                anchors: ['firstPage', 'secondPage', '3rdPage', 'fourthPage', 'fifthPage'],
-                //                sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
-                scrollOverflow: true,
+                anchors: [
+                    'page1',
+                    'page2',
+                    'page3',
+                    'page4'
+                ],
+                sectionsColor: [
+                    'transparent',
+                    'transparent',
+                    'transparent',
+                    'transparent'
+                ],
                 navigation: true,
-                navigationPosition: 'right',
-                navigationTooltips: ['First page', 'Second page', 'Third and last page', 'Not so fast', 'last'],
-                menu: "#menu",
-                showActiveTooltip: false,
-                slidesNavigation: true,
-                slidesNavPosition: 'bottom'
+                navigationPosition: checkWidth(),
+                navigationTooltips: ['First page', 'Second page', 'Third and last page', 'Not so fast', 'Got ya!']
             });
         });
 
     </script>
 
-
-    <script>
-        function pathPrepare($el) {
-            var lineLength = $el[0].getTotalLength();
-            $el.css("stroke-dasharray", lineLength);
-            $el.css("stroke-dashoffset", lineLength);
-        }
-
-        var $word = $("path#word");
-        var $dot = $("path#dot");
-
-        // prepare SVG
-        pathPrepare($word);
-        pathPrepare($dot);
-
-        // init controller
-        var controller = new ScrollMagic.Controller();
-
-        // build tween
-        var tween = new TimelineMax()
-            .add(TweenMax.to($word, 0.9, {
-                strokeDashoffset: 0,
-                ease: Linear.easeNone
-            })) // draw word for 0.9
-            .add(TweenMax.to($dot, 0.1, {
-                strokeDashoffset: 0,
-                ease: Linear.easeNone
-            })) // draw dot for 0.1
-            .add(TweenMax.to("path", 1, {
-                stroke: "#33629c",
-                ease: Linear.easeNone
-            }), 0); // change color during the whole thin
-
-        // build scene
-        var scene = new ScrollMagic.Scene({
-                triggerElement: "#trigger1",
-                duration: 200,
-                tweenChanges: true
-            })
-            .setTween(tween)
-            .addIndicators() // add indicators (requires plugin)
-            .addTo(controller);
-
-    </script>
-    <link rel="shortcut icon" href="../favicon.ico">
 </head>
 
 <body>
-    <!--   ANIMATION     -->
+
     <header id="header">
-       <p class="text-holder"><span id="holder"></span><span class="blinking-cursor">|</span></p>
-       
-       <span id="holder2"> </span>
-       <span id="holder3"></span>
-        <div class="fullscreenmenu">
-            
-            <ul>
-                <li class="hamburger_menu" data-menuanchor="firstPage"><a href="#firstPage">Home</a></li>
-                <li class="hamburger_menu1" data-menuanchor="secondPage"><a href="#secondPage">ABOUT ME</a></li>
-                <li class="hamburger_menu2" data-menuanchor="fourthPage"><a href="#3rdPage">Projects</a></li>
-                <li class="hamburger_menu3" data-menuanchor="3rdPage"><a href="#fourth">CONTACTS</a></li>
-                <li class="hamburger_menu4" data-menuanchor="fourthPage"><a href="#fifth">Skills</a></li>
+        <nav>
+            <ul class="header-links">
+                <li class="header-link1"><a href="#"><span class="line-through">Place</span></a></li>
+                <li class="header-link2"><a href="#"><span class="line-through">Date</span></a></li>
+                <li class="header-link3"><a href="#"><span class="line-through">Time</span></a></li>
             </ul>
-
-        </div>
-        <div class="header-top">
-            <div class="pre-header">
-
-            </div>
-        </div>
-        
-        <ul class="cb-slideshow">
-            <li><span>Image 01</span>
-                <div>
-                    <h3>whe·re</h3>
-                </div>
-            </li>
-            <li><span>Image 02</span>
-                <div>
-                    <h3>pa·ss·ion</h3>
-                </div>
-            </li>
-            <li><span>Image 03</span>
-                <div>
-                    <h3>mee·ts</h3>
-                </div>
-            </li>
-            <li><span>Image 04</span>
-                <div>
-                    <h3>crea·tivity</h3>
-                </div>
-            </li>
-            <li><span>Image 05</span>
-                <div>
-                    <h3>qui·e·tude</h3>
-                </div>
-            </li>
-            <li><span>Image 06</span>
-                <div>
-                    <h3>re·lax·a·tion</h3>
-                </div>
-            </li>
-        </ul>
-
-
+        </nav>
     </header>
 
-    <ul id="menu">
 
-        <li class="logo">
-            <img src="images/qewfw.png" alt="logo" class="logo-img">
-        </li>
-        <div class="menu-links-wrapper">
-            <li data-menuanchor="firstPage" class="active"><a href="#firstPage">HOME</a></li>
-            <li data-menuanchor="secondPage"><a href="#secondPage">ABOUT ME</a></li>
-            <li data-menuanchor="3rdPage"><a href="#3rdPage">PROJECTS</a></li>
-            <li data-menuanchor="fourthPage"><a href="#fourthPage">CONTACTS</a></li>
-            <li data-menuanchor="fifthPage"><a href="#fifthPage">SKILLS</a></li>
-        </div>
-
-        <li class="hamburger">
-            <nav class="menu">
-
-                <div class="strokes"></div>
-
-                <div class="strokes"></div>
-
-                <div class="strokes"></div>
-
-            </nav>
-        </li>
-    </ul>
-
-
-
-
+   
     <div id="fullpage">
         <div class="section" id="section0">
-            <div class="intro">
-                <div id="particles-js"></div>
-                <div class="about-me-section">
-
-                    <div class="row">
-
-                        <div class="col-md-6 col-xs-12 first-col-resume">
-                            <!--                           <img src="images/profile.jpg" alt="" class="profile-picture">-->
-                            <img src="http://via.placeholder.com/200x200" alt="" class="profile-picture">
-                            <h2 class="intro-text">Hello, my name is Ilian and I am a professional <br> Web <span class="developer">DEVELOPER</span></h2>
-                            <!--                    <hr class="fancy-line"></hr>-->
-
-                            <div class="social-icons-section">
-                                <i class="fa fa-facebook-square facebook" aria-hidden="true"></i>
-                                <i class="fa fa-twitter social-icons-set twitter" aria-hidden="true"></i>
-                                <i class="fa fa-github social-icons-set github" aria-hidden="true"></i>
-                                <i class="fa fa-linkedin social-icons-set linkedin" aria-hidden="true"></i>
-                                <i class="fa fa-instagram social-icons-set instagram" aria-hidden="true"></i>
-                                <a class="download1" href="images/kkekek.jpg" download>DOWNLOAD MY CV</a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-xs-12 social-icons">
-
-
-                            <div id="login-box">
-                                <div class="logo">
-
-                                    <!--                                <h1 class="logo-caption"><span class="tweak">L</span>ogin</h1>-->
-                                </div>
-                                <!-- /.logo -->
-                                <p class="intro-text" v>You can find me on social media </p>
-                                <span class="or">OR</span>
-                                <p class="intro-text">simply download my CV for more descriptive information bekgraund snimka s opacity i cheren filtur na taq sekciq </p>
-                                <!--                           <hr class="style17">-->
-
-                                <div class="arrow bounce">
-
-                                </div>
-                                <a class="download2" href="images/kkekek.jpg" download>DOWNLOAD</a>
-                            </div>
-
-
-
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-            </div>
+            <h1 class="line-through">Waterproof</h1>
+            <div class="circle"></div>
+            <h2 class="side_text">Exhibition</h2>
         </div>
+        <div class="section" id="section1">
+            <h1 class="line-through">Waterproof</h1>    
+            <div class="square"></div>
+            <h2 class="side_text">Exhibition</h2>            
 
+        </div>
         <div class="section" id="section2">
-          
-           <div class="starfield">
-  <span></span>
-  <span></span
-  <span></span>
-  <span></span>
-</div>
-            <div class="container">
-              
-<!--
-               <h3 class="view_projects" id="holder">Browse through my projects</h3>
-               
--->
-                <div class="slide" id="portf-sld-1" data-anchor="slide1">
-                   
-                    <div class="hover panel first-child-project" onmouseover="javascript:this.className += ' flip';" onmouseout="javascript:this.className = 'hover panel';">
-                        <div class="front">
-                            <div class="frontTitle">
-                                Idaho Science 
-                            </div>
-                            <div class="frontLogo isas">
-                            </div>
-                            <div class="frontLocation">
-                                NASA Ames
-                            </div>
-                        </div>
-                        <div class="back">
-                            <div class="backTitle">ISAS Graduate</div>
-                            <div class="backParagraph">
-                                Idaho Science and Aerospace is an online c
-                            </div>
-                            <div class="backGoto">
-                                <a href="http://nicholas.dizin.x10.bz" target="_blank" title="Academic Portfolio">Portfolio →</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hover panel" onmouseover="javascript:this.className += ' flip';" onmouseout="javascript:this.className = 'hover panel';">
-                    <div class="front">
-                        <div class="frontTitle">
-                          Digital Marketing
-                        </div>
-                        <div class="frontLogo boisedigital">
-                        </div>
-                        <div class="frontLocation">
-                            Boise, Idaho
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="backTitle"> Digital Marketing</div>
-                        <div class="backParagraph">
-                            Boise Digital Marketing was founded in 2015 under a partnership 
-                        </div>
-                        <div class="backGoto">
-                            <a href="http://boisedigitalmarketing.com" target="_blank" title="Boise Digital Marketing">Boise Digital →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hover panel last-child-project" onmouseover="javascript:this.className += ' flip';" onmouseout="javascript:this.className = 'hover panel';">
-                    <div class="front">
-                        <div class="frontTitle">
-                            Cinematography
-                        </div>
-                        <div class="frontLogo dissolve">
-                        </div>
-                        <div class="frontLocation">
-                            Dissolve.com
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="backTitle"> Cinematography</div>
-                        <div class="backParagraph">
-                            I am an independent stock footage contributor on Dissolve.com. 
-                        </div>
-                        <div class="backGoto">
-                            <a href="http://dissolve.com/products?media_type=video&producer=Nicholas+Butler" target="_blank" title="Stock Video Collection (Not very comprehensive atm)">Stock Collection →</a>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                
-                
-                
-                
-                <div class="slide" id="portf-sld-2" data-anchor="slide2">
-                    <div class="hover panel first-child-project" onmouseover="javascript:this.className += ' flip';" onmouseout="javascript:this.className = 'hover panel';">
-                        <div class="front">
-                            <div class="frontTitle">
-                                Idaho Science 
-                            </div>
-                            <div class="frontLogo isas">
-                            </div>
-                            <div class="frontLocation">
-                                NASA Ames
-                            </div>
-                        </div>
-                        <div class="back">
-                            <div class="backTitle">ISAS Graduate</div>
-                            <div class="backParagraph">
-                                Idaho Science and Aerospace is an online class that invites the top 20% of students 
-                            </div>
-                            <div class="backGoto">
-                                <a href="http://nicholas.dizin.x10.bz" target="_blank" title="Academic Portfolio">Academic Portfolio →</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hover panel" onmouseover="javascript:this.className += ' flip';" onmouseout="javascript:this.className = 'hover panel';">
-                    <div class="front">
-                        <div class="frontTitle">
-                            Digital Marketing
-                        </div>
-                        <div class="frontLogo boisedigital">
-                        </div>
-                        <div class="frontLocation">
-                            Boise, Idaho
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="backTitle">Digital Marketing</div>
-                        <div class="backParagraph">
-                            Boise Digital Marketing was founded in 2015 under a partnership between 
-                        </div>
-                        <div class="backGoto">
-                            <a href="http://boisedigitalmarketing.com" target="_blank" title="Boise Digital Marketing">Boise Digital →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hover panel last-child-project" onmouseover="javascript:this.className += ' flip';" onmouseout="javascript:this.className = 'hover panel';">
-                    <div class="front">
-                        <div class="frontTitle">
-                            Cinematography
-                        </div>
-                        <div class="frontLogo dissolve">
-                        </div>
-                        <div class="frontLocation">
-                            Dissolve.com
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="backTitle"> Cinematography</div>
-                        <div class="backParagraph">
-                            I am an independent stock footage contributor on Dissolve.com. 
-                        </div>
-                        <div class="backGoto">
-                            <a href="http://dissolve.com/products?media_type=video&producer=Nicholas+Butler" target="_blank" title="Stock Video Collection (Not very comprehensive atm)">Stock Collection →</a>
-                        </div>
-                    </div>
-                </div>
-                </div>
-
-                
-            </div>
+            <h1 class="line-through">Waterproof</h1>
+            <div class="triangle"></div>
+            <h2 class="side_text">Exhibition</h2>
         </div>
-
-
-
-
-
-
-
-
-        
-        <div class="section" id="section4">
-    
-                <ul id="skills">	
-	<li>
-		HTML5
-		<div class="bar_container">
-			<span class="bar" data-bar='{ "color": "#19f" }'>
-				<span class="pct">82%</span>
-			</span>
-		</div>
-	</li>
-	<li>
-		CSS3
-		<div class="bar_container">
-			<span class="bar" data-bar='{ "color": "#27ae60", "delay": 600 }'>
-				<span class="pct">100%</span>
-			</span>
-		</div>
-	</li>
-	<li>
-		PHP
-		<div class="bar_container">
-			<span class="bar" data-bar='{ "color": "#9b59b6", "delay": 1200 }'>
-				<span class="pct">60%</span>
-			</span>
-		</div>
-	</li>
-	<li>
-		Photoshop
-		<div class="bar_container">
-			<span class="bar" data-bar='{ "color": "#ae8a33", "delay": 1800 }'>
-				<span class="pct">60%</span>
-			</span>
-		</div>
-	</li>
-	<li>
-		JavaScript
-		<div class="bar_container">
-			<span class="bar" data-bar='{ "color": "rgb(220, 59, 9)", "delay": 1800 }'>
-				<span class="pct">70%</span>
-			</span>
-		</div>
-	</li>
-</ul>
-    
-        </div>
-
-
         <div class="section" id="section3">
-           <div id="stripes">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-            <div class="intro">
-                <div id="wrapper">
-			<div class="title">
-				<h1>CONTACT ME</h1>
-			</div>
-			<form>
-				<div class="_3">
-					<label class="boxLabel" for="name">YOUR NAME</label>
-					<input type="text" class="textBox" name="name" id="name">
-				</div>
-
-				<div class="_3">
-					<label class="boxLabel" for="phone">YOUR PHONE</label>
-					<input type="text" class="textBox" name="phone" id="phone">
-				</div>
-
-				<div class="_3">
-					<label class="boxLabel" for="email">YOUR EMAIL</label>
-					<input type="text" class="textBox" name="email" id="email">
-				</div>
-
-				<div class="_1">
-					<label class="boxLabel" for="subject">SUBJECT</label>
-					<input type="text" class="textBox" name="subject" id="subject">
-				</div>
-
-				<div class="_1">
-					<label class="boxLabel" for="messagae ">MESSAGE</label>
-					<textarea class="textBox" name="messagae" id="messagae"></textarea>
-				</div>
-
-				<input id="submit" type="submit" value="Send">
-			</form>
-		</div>
+            <h1 class="line-through">Waterproof</h1>
+            <div class="star"></div>
+            <h2 class="side_text">Exhibition</h2>
+        </div>
+        <div class="section" id="section4">
+            <h1 class="line-through">Waterproof</h1>
+            <div class="circle2"></div>
+            <h2 class="side_text">Exhibition</h2>
+        </div>
+    </div>
+    
+    
+    
+    <footer id="footer">
+        <div class="footer-sections-wrapper">
+            <div class="container footer-wrapper">
+                <div class="row">
+                   
+                    <div class="col-md-4 col-sm-4 footer-section">
+                        <p class="footer-text text1">
+                            <span class="line-through">Trafalgar</span> <br> <span class="line-through2">Square, London</span>
+                        </p>
+                    </div>
+                    
+                    <div class="col-md-4 col-sm-4 footer-section">
+                        <p class="footer-text text2">
+                            <span class="line-through">VIII · VI · MMXVII </span> <br> <span class="line-through2">6/08/2017</span>
+                        </p>
+                    </div> 
+                    
+                    <div class="col-md-4 col-sm-4 footer-section">
+                        <p class="footer-text text3">
+                            <span class="line-through">20:00</span> <br> <span class="line-through2">22:00</span>
+                        </p>
+                    </div>
+                    
+                </div>
             </div>
         </div>
-        
-        
+    </footer>
 
-        <div class="section" id="section5">
-            <div class="intro">
-                <h1>Navigation dots</h1>
-                <p>An easy and beautiful way to navigate throw the sections</p>
-            </div>
-        </div>
-
-
-    </div><!-- fullpage.js end div -->
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 
