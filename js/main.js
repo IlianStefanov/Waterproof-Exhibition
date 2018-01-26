@@ -237,13 +237,22 @@ $(document).ready(function(){
     var firstSlideIntroTL,
         skillsSlideTL,
         projectsSLideTL,
-        contactsSlideTL
-    
-    firstSlideIntroTL
+        contactsSlideTL;
     
     
-    
-    
+//    rotation = TweenMax.to($('.polygon2'), 15, {
+//        css:
+//        {
+//            rotation:360
+//        },
+//        // remove default easing for seamless loop
+//        ease:Linear.easeNone,
+//        repeat: -1,
+//        paused: false
+//    })
+//    
+//    controller.add(rotation);
+//    
     
     
     
