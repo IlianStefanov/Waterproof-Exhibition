@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
-
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -23,7 +23,7 @@
 
     <!--    <script type="text/javascript" src="js/attrchange.js"></script>-->
 
-    
+
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
 
@@ -40,17 +40,18 @@
             var left = "left";
             var bottom = "bottom";
             var returnWidth = windowWidth < 400 ? bottom : left;
-//            return returnWidth;
+            //            return returnWidth;
             console.log(returnWidth);
             return returnWidth;
         }
-        
-        
-        
-        
+
+
+
+
         $(document).ready(function() {
             $('#fullpage').fullpage({
                 anchors: [
+                    'page0',
                     'page1',
                     'page2',
                     'page3',
@@ -62,6 +63,7 @@
                     'transparent',
                     'transparent'
                 ],
+                menu: '#menu',
                 navigation: true,
                 navigationPosition: checkWidth(),
                 navigationTooltips: ['First page', 'Second page', 'Third and last page', 'Not so fast', 'Got ya!']
@@ -72,54 +74,329 @@
 
 </head>
 
-<body>
-
+<body class="demo-1 imgloaded render">
+<!--
+<div class="content">
+				<div class="glitch">
+					<div class="glitch__img"></div>
+					<div class="glitch__img"></div>
+					<div class="glitch__img"></div>
+					<div class="glitch__img"></div>
+					<div class="glitch__img"></div>
+				</div>
+				<h2 class="content__title">ethereal</h2>
+			</div>
+-->
     <header id="header">
         <nav>
-            <ul class="header-links">
-                <li class="header-link1"><a href="#"><span class="line-through">Place</span></a></li>
-                <li class="header-link2"><a href="#"><span class="line-through">Date</span></a></li>
-                <li class="header-link3"><a href="#"><span class="line-through">Time</span></a></li>
+            <ul class="header-links" id="menu">
+                <li data-menuanchor="page0" class="active links header-link1"><a href="#page0"><span class="line-through">About Me</span></a></li>
+                <li data-menuanchor="page2" class="links header-link2"><a href="#page2"><span class="line-through">Projects</span></a></li>
+                <li data-menuanchor="page4" class="links header-link3"><a href="#page4"><span class="line-through">Contacts</span></a></li>
             </ul>
         </nav>
     </header>
 
 
-   
+
     <div id="fullpage">
-        <div class="section" id="section0">
-            <h1 class="line-through">Waterproof</h1>
-            <div class="circle"></div>
-            <h2 class="side_text">Exhibition</h2>
+        <div class="section glitch" id="section0">
+                    <div class="glitch__img glitch__img1"></div>
+					<div class="glitch__img glitch__img1"></div>
+					<div class="glitch__img glitch__img1"></div>
+					<div class="glitch__img glitch__img1"></div>
+					<div class="glitch__img glitch__img1"></div>
+            <h1 class="content__title">PORTFOLIO</span></h1>
+            <p class="content__text">Hey guys, my name is Ilian Stefanov and I am front-end web developer. I consider myself as creative individual with eye for small detail. You know what they say... The devil is in the details.</p>
+            <div class="triangle glitch">
+                    <div class="glitch__img glitch__img_triangle"></div>
+					<div class="glitch__img glitch__img_triangle"></div>
+					<div class="glitch__img glitch__img_triangle"></div>
+					<div class="glitch__img glitch__img_triangle"></div>
+            </div>
+            <h2 class="side_text">WELCOME</h2>
         </div>
         <div class="section" id="section1">
-            <h1 class="line-through">Waterproof</h1>    
-            <div class="square"></div>
-            <h2 class="side_text">Exhibition</h2>            
+            <!--            <h1 class="line-through">Waterproof</h1>-->
+            <div class="square">
+
+                <!-- 
+Please note, that you can apply .m--global-blending-active to .fnc-slider 
+to enable blend-mode for all background-images or apply .m--blend-bg-active
+to some specific slides (.fnc-slide). It's disabled by default in this demo,
+because it requires specific images, where more than 50% of bg is transparent or monotone
+-->
+<!--<div class="demo-cont">-->
+    <!-- slider start -->
+<!--
+    <div class="fnc-slider example-slider">
+        <div class="fnc-slider__slides">
+-->
+            <!-- slide start -->
+<!--
+            <div class="fnc-slide m--blend-green m--active-slide">
+                <div class="fnc-slide__inner">
+                    <div class="fnc-slide__mask">
+                        <div class="fnc-slide__mask-inner"></div>
+                    </div>
+                    <div class="fnc-slide__content">
+                        <h2 class="fnc-slide__heading">
+                            <div class="fnc-slide__heading-line">
+                                <span>Black</span>
+                            </div>
+                            <div class="fnc-slide__heading-line">
+                                <span>Widow</span>
+                            </div>
+                        </h2>
+                        <button type="button" class="fnc-slide__action-btn">
+              Credits
+              <span data-text="Credits">Credits</span>
+            </button>
+                    </div>
+                </div>
+            </div>
+-->
+            <!-- slide end -->
+            <!-- slide start -->
+<!--
+            <div class="fnc-slide m--blend-dark">
+                <div class="fnc-slide__inner">
+                    <div class="fnc-slide__mask">
+                        <div class="fnc-slide__mask-inner"></div>
+                    </div>
+                    <div class="fnc-slide__content">
+                        <h2 class="fnc-slide__heading">
+                            <div class="fnc-slide__heading-line">
+                                <span>Captain</span>
+                            </div>
+                            <div class="fnc-slide__heading-line">
+                                <span>America</span>
+                            </div>
+                        </h2>
+                        <button type="button" class="fnc-slide__action-btn">
+              Credits
+              <span data-text="Credits">Credits</span>
+            </button>
+                    </div>
+                </div>
+            </div>
+-->
+            <!-- slide end -->
+            <!-- slide start -->
+<!--
+            <div class="fnc-slide m--blend-red">
+                <div class="fnc-slide__inner">
+                    <div class="fnc-slide__mask">
+                        <div class="fnc-slide__mask-inner"></div>
+                    </div>
+                    <div class="fnc-slide__content">
+                        <h2 class="fnc-slide__heading">
+                            <div class="fnc-slide__heading-line">
+                                <span>Iron</span>
+                            </div>
+                            <div class="fnc-slide__heading-line">
+                                <span>Man</span>
+                            </div>
+                        </h2>
+                        <button type="button" class="fnc-slide__action-btn">
+              Credits
+              <span data-text="Credits">Credits</span>
+            </button>
+                    </div>
+                </div>
+            </div>
+-->
+            <!-- slide end -->
+            <!-- slide start -->
+<!--
+            <div class="fnc-slide m--blend-blue">
+                <div class="fnc-slide__inner">
+                    <div class="fnc-slide__mask">
+                        <div class="fnc-slide__mask-inner"></div>
+                    </div>
+                    <div class="fnc-slide__content">
+                        <h2 class="fnc-slide__heading">
+                            <div class="fnc-slide__heading-line">
+                                <span>Thor</span>
+                            </div>
+                            <div class="fnc-slide__heading-line">
+                                <span>Just Thor</span>
+                            </div>
+                        </h2>
+                        <button type="button" class="fnc-slide__action-btn">
+              Credits
+              <span data-text="Credits">Credits</span>
+            </button>
+                    </div>
+                </div>
+            </div>
+-->
+            <!-- slide end -->
+<!--
+        </div>
+        <nav class="fnc-nav">
+            <div class="fnc-nav__bgs">
+                <div class="fnc-nav__bg m--navbg-green m--active-nav-bg"></div>
+                <div class="fnc-nav__bg m--navbg-dark"></div>
+                <div class="fnc-nav__bg m--navbg-red"></div>
+                <div class="fnc-nav__bg m--navbg-blue"></div>
+            </div>
+            <div class="fnc-nav__controls">
+                <button class="fnc-nav__control">
+          Black Widow
+          <span class="fnc-nav__control-progress"></span>
+        </button>
+                <button class="fnc-nav__control">
+          Captain America
+          <span class="fnc-nav__control-progress"></span>
+        </button>
+                <button class="fnc-nav__control">
+          Iron Man
+          <span class="fnc-nav__control-progress"></span>
+        </button>
+                <button class="fnc-nav__control">
+          Thor
+          <span class="fnc-nav__control-progress"></span>
+        </button>
+            </div>
+        </nav>
+    </div>
+-->
+    <!-- slider end -->
+<!--
+    <div class="demo-cont__credits">
+        <div class="demo-cont__credits-close"></div>
+        <h2 class="demo-cont__credits-heading">Made by</h2>
+        <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/142996/profile/profile-512_5.jpg" alt="" class="demo-cont__credits-img" />
+        <h3 class="demo-cont__credits-name">Nikolay Talanov</h3>
+        <a href="https://codepen.io/suez/" target="_blank" class="demo-cont__credits-link">My codepen</a>
+        <a href="https://twitter.com/NikolayTalanov" target="_blank" class="demo-cont__credits-link">My twitter</a>
+        <h2 class="demo-cont__credits-heading">Based on</h2>
+        <a href="https://dribbble.com/shots/2375246-Fashion-Butique-slider-animation" target="_blank" class="demo-cont__credits-link">Concept by Kreativa Studio</a>
+        <h4 class="demo-cont__credits-blend">Global Blend Mode</h4>
+        <div class="colorful-switch">
+            <input type="checkbox" class="colorful-switch__checkbox js-activate-global-blending" id="colorful-switch-cb" />
+            <label class="colorful-switch__label" for="colorful-switch-cb">
+        <span class="colorful-switch__bg"></span>
+        <span class="colorful-switch__dot"></span>
+        <span class="colorful-switch__on">
+          <span class="colorful-switch__on__inner"></span>
+        </span>
+        <span class="colorful-switch__off"></span>
+      </label>
+        </div>
+    </div>
+</div>
+-->
+
+            </div>
+            <h2 class="side_text">Exhibition</h2>
 
         </div>
         <div class="section" id="section2">
+            <!--
             <h1 class="line-through">Waterproof</h1>
-            <div class="triangle"></div>
+            <div class="triangle">
+            </div>
             <h2 class="side_text">Exhibition</h2>
+-->
+
+
+            <div class="slide" id="slide1">
+                <div class="gradient"></div>
+                <div class="projectimage project-img-1"></div>
+                <span class="line-span"></span>
+                <div class="intro">
+                    <div class="intro-wrapper">
+
+                        <h1> Create Sliders</h1>
+                        <p>Not only vertical scrolling but also horizontal scrolling. With fullPage.js you will be able to add horizontal sliders in the most simple way ever.</p>
+                        <a href="#" class="fancy-button bg-gradient1"><span>View Project</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" id="slide2">
+                <div class="gradient"></div>
+                <div class="projectimage project-img-2"></div>
+                <span class="line-span"></span>
+                <div class="intro">
+                    <div class="intro-wrapper">
+                        <h1>Simple</h1>
+                        <p>Easy to use. Configurable and customizable.</p>
+                        <a href="#" class="fancy-button bg-gradient1"><span></i>View Project</span></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="slide" id="slide3">
+                <div class="gradient"></div>
+                <div class="projectimage project-img-3"></div>
+                <span class="line-span"></span>
+                <div class="intro">
+                    <div class="intro-wrapper">
+                        <h1>Cool</h1>
+                        <p>It just looks cool. Impress everybody with a simple and modern web design!</p>
+                        <a href="#" class="fancy-button bg-gradient1"><span>View Project</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" id="slide4">
+                <div class="gradient"></div>
+                <div class="projectimage project-img-4"></div>
+                <span class="line-span"></span>
+                <div class="intro">
+
+                    <div class="intro-wrapper">
+                        <h1>Compatible</h1>
+                        <p>Working in modern and old browsers too! IE 8 users don't have the fault of using that horrible browser! Lets give them a chance to see your site in a proper way!</p>
+                        <a href="#" class="fancy-button bg-gradient1"><span>View Project</span></a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="section" id="section3">
+        <div class="section glitch" id="section3">
+           <div class="glitch__img glitch__img3"></div>
+					<div class="glitch__img glitch__img3"></div>
+					<div class="glitch__img glitch__img3"></div>
+					<div class="glitch__img glitch__img3"></div>
+					<div class="glitch__img glitch__img3"></div>
+            <!--
             <h1 class="line-through">Waterproof</h1>
             <div class="star"></div>
             <h2 class="side_text">Exhibition</h2>
+-->
+
+
         </div>
-        <div class="section" id="section4">
-            <h1 class="line-through">Waterproof</h1>
-            <div class="circle2"></div>
-            <h2 class="side_text">Exhibition</h2>
+        <div class="section glitch" id="section4">
+            <div class="glitch__img glitch__img4"></div>
+					<div class="glitch__img glitch__img4"></div>
+					<div class="glitch__img glitch__img4"></div>
+					<div class="glitch__img glitch__img4"></div>
+					<div class="glitch__img glitch__img4"></div>
+            
+<!--            <h1 class="line-through">Waterproof</h1>-->
+            <div class="triangle">
+                    
+            </div>
+<!--            <h2 class="side_text">Exhibition</h2>-->
+
+            <h1 class="get_in_touch">GET IN TOUCH</h1>
+<form class="form">      
+  <input name="name" type="text" class="feedback-input" placeholder="Name" />   
+  <input name="email" type="text" class="feedback-input" placeholder="Email" />
+  <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+  <input type="submit" value="SUBMIT"/>
+</form>
         </div>
     </div>
-    
-    
-    
+
+
+
     <footer id="footer">
         <div class="footer-sections-wrapper">
             <div class="container footer-wrapper">
+                <!--
                 <div class="row">
                    
                     <div class="col-md-4 col-sm-4 footer-section">
@@ -141,10 +418,15 @@
                     </div>
                     
                 </div>
+-->
             </div>
         </div>
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/plugins/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 
