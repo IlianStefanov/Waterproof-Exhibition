@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-=======
-
->>>>>>> c2473f844007feff0d97a7ec6c45bca2cbcedee2
 a {
     color: white !important;
 }
@@ -29,7 +25,6 @@ a {
     margin: 0 auto;
 }
 */
-<<<<<<< HEAD
 .demo-1 {
 	--color-text: #fff;
 	--color-bg: #000;
@@ -860,8 +855,6 @@ text-shadow:0px 1px 0 #FFF700,0px 2px 1px #FFF700,0px 3px 0 #B0AA00,0px 4px 0 #B
 	}
 }
 
-=======
->>>>>>> c2473f844007feff0d97a7ec6c45bca2cbcedee2
 
 
 
@@ -1479,11 +1472,7 @@ a:hover, a:focus, a:active {
   padding: 5px 15px;
   font-size: 20px;
   line-height: 1;
-<<<<<<< HEAD
 /*  color: transparent;*/
-=======
-  color: transparent;
->>>>>>> c2473f844007feff0d97a7ec6c45bca2cbcedee2
   border: none;
   text-transform: uppercase;
   background: transparent;
@@ -2005,17 +1994,10 @@ body {
 
 #section0 p {
     margin-top: 1rem;
-<<<<<<< HEAD
 /*    font-size: 1.5em;*/
     color: white;
     width: 50%;
     margin: 1.5em auto;z-index: 3;
-=======
-    font-size: 1.5em;
-    color: white;
-    width: 50%;
-    margin: 1.5em auto;
->>>>>>> c2473f844007feff0d97a7ec6c45bca2cbcedee2
 }
 
 #fullpage .section h2 {
@@ -2080,10 +2062,7 @@ body {
 
 
 
-<<<<<<< HEAD
 /*
-=======
->>>>>>> c2473f844007feff0d97a7ec6c45bca2cbcedee2
 #section0 {
     background: url(../images/1.png) no-repeat center center / cover !important;
 }
@@ -2130,7 +2109,6 @@ body {
 #section0 h1 {
     background: -webkit-linear-gradient(transparent, #a90c11);
   -webkit-background-clip: text;
-<<<<<<< HEAD
   -webkit-text-fill-color: transparent;
     text-shadow: 0px 0px 20px #a90c11;
 }
@@ -2142,14 +2120,6 @@ body {
 }
 .portfolio {
 font-family: 'Bungee', cursive;
-=======
-  -webkit-text-fill-color: #111;
-    text-shadow: 0px 0px 20px #a90c11;
-}
-
-.portfolio {
-font-family: 'Libre Baskerville', serif !important;
->>>>>>> c2473f844007feff0d97a7ec6c45bca2cbcedee2
   font-size: 72px;
   background: -webkit-linear-gradient(transparent, #a90c11);
   -webkit-background-clip: text;
@@ -2269,30 +2239,11 @@ font-family: 'Libre Baskerville', serif !important;
 
 .header-links li .line-through:hover:after {
     -webkit-animation: strike .75s ease-in-out forwards;
-<<<<<<< HEAD
-    animation: strike .75s ease-in-out forwards;
-}
-.header-links .active .line-through:after {
-    -webkit-animation: strike .75s ease-in-out forwards;
-=======
->>>>>>> c2473f844007feff0d97a7ec6c45bca2cbcedee2
     animation: strike .75s ease-in-out forwards;
 }
 .header-links .active .line-through:after {
     -webkit-animation: strike .75s ease-in-out forwards;
     animation: strike .75s ease-in-out forwards;
-}
-
-.header-links .active .line-through {
-    
-}
-
-
-@-webkit-keyframes strike{
-  0%     { -webkit-transform-origin:  0% 50%; transform-origin:  0% 50%;-webkit-transform:scaleX(1);transform:scaleX(1); }
-  50%    { -webkit-transform-origin:  0% 50%; transform-origin:  0% 50%;-webkit-transform:scaleX(0);transform:scaleX(0);  }
-  50.01% { -webkit-transform-origin:100% 50%; transform-origin:100% 50%;-webkit-transform:scaleX(0);transform:scaleX(0);  }
-  100%   { -webkit-transform-origin:100% 50%; transform-origin:100% 50%;-webkit-transform:scaleX(0);transform:scaleX(0);  }
 }
 
 .header-links .active .line-through {

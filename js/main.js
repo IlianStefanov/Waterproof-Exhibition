@@ -202,24 +202,7 @@ document.querySelector(".js-activate-global-blending").addEventListener("click",
   document.querySelector(".example-slider").classList.toggle("m--global-blending-active");
 });
 $(document).ready(function(){
-<<<<<<< HEAD
         
-=======
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
->>>>>>> c2473f844007feff0d97a7ec6c45bca2cbcedee2
     
   //Variables 
   var controller,
@@ -228,7 +211,6 @@ $(document).ready(function(){
     
       $navItems = $('.links');
     ;  
-<<<<<<< HEAD
 //    console.log($navItems);
 //    console.log($slideIn);
 //    console.log($slides);
@@ -270,49 +252,6 @@ $(document).ready(function(){
 
             firstSlideIntroTL = new TimelineMax();
 
-=======
-    console.log($navItems);
-    console.log($slideIn);
-    console.log($slides);
-
-    console.log(window.location.toString());
-    console.log("hoy");
-    
-    
-    
-    
-    var firstSlideIntroTL,
-        skillsSlideTL,
-        projectsSLideTL,
-        contactsSlideTL;
-    
-    
-//    rotation = TweenMax.to($('.polygon2'), 15, {
-//        css:
-//        {
-//            rotation:360
-//        },
-//        // remove default easing for seamless loop
-//        ease:Linear.easeNone,
-//        repeat: -1,
-//        paused: false
-//    })
-//    
-//    controller.add(rotation);
-//    
-    
-    
-    
-   
-    $(window).on('load', function() {
-        if(window.location.hash) {
-            var hash = window.location.hash.substring(1);
-            console.log(hash);
-
-
-            firstSlideIntroTL = new TimelineMax();
-
->>>>>>> c2473f844007feff0d97a7ec6c45bca2cbcedee2
         }
     });
 
@@ -328,7 +267,6 @@ $(document).ready(function(){
         
         switch(hash) {
             case 'page0': 
-<<<<<<< HEAD
 //                console.log("maa mu deba tva e pyrvi slaid");
                 break;
             case 'page1': 
@@ -342,21 +280,6 @@ $(document).ready(function(){
                 break;
             case 'page4':
 //                console.log("keke");
-=======
-                console.log("maa mu deba tva e pyrvi slaid");
-                break;
-            case 'page1': 
-                console.log("maa mu deba tva e vtori slaid");
-                break;
-            case 'page2':
-                console.log("maa mu deba tva e treti slaid");
-                break;
-            case 'page3':
-                console.log("dree mi bachka");
-                break;
-            case 'page4':
-                console.log("keke");
->>>>>>> c2473f844007feff0d97a7ec6c45bca2cbcedee2
                 break;
         }
         
